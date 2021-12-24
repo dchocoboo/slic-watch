@@ -4,7 +4,7 @@ const Ajv = require('ajv')
 const { test } = require('tap')
 
 const defaultConfig = require('../default-config')
-const { pluginConfigSchema, slicWatchSchema } = require('../config-schema')
+const { pluginConfigSchema, slicWatchSchema, iso8601Pattern } = require('../config-schema')
 
 test('Default config conforms to the config schema', (t) => {
   const slicWatchConfig = {
@@ -40,5 +40,11 @@ test('Default config conforms to the config schema without topicArn', (t) => {
   const pluginValid = pluginValidate(testConfig)
   t.ok(pluginValid, pluginValidate.errors)
 
+  t.end()
+})
+
+test('Test dashboard time period regex', (t) => {
+  const re = new RegExp(iso8601Pattern)
+  t.ok(re.test('2020-01-01T00:00:00.000Z'))
   t.end()
 })

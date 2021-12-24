@@ -10,7 +10,11 @@ plugins:
 
 custom:
   slicWatch:
-    topicArn: ${env:ALARM_TOPIC}
+    topicArn: ${env:ALARM_TOPIC, ""}
+    dashboard:
+      enabled: true
+      timeRange:
+        start: -PT3H
     alarms:
       Lambda:
         Invocations:
@@ -108,10 +112,6 @@ resources:
           - AttributeName: gsi1pk
             AttributeType: S
           - AttributeName: gsi1sk
-            AttributeType: S
-          - AttributeName: field1
-            AttributeType: S
-          - AttributeName: field2
             AttributeType: S
           - AttributeName: timestamp
             AttributeType: N

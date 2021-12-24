@@ -217,5 +217,6 @@ const functionConfigSchema = {
 module.exports = {
   slicWatchSchema,
   pluginConfigSchema,
-  functionConfigSchema
+  functionConfigSchema,
+  iso8601Pattern
 }
