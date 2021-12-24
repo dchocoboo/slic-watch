@@ -12,6 +12,7 @@
   "devDependencies": {
     "ajv": "^6.12.6",
     "serverless": "^2.38.0",
+    "serverless-esbuild": "^1.23.2",
     "serverless-slic-watch-plugin": "^1.0.4",
     "serverless-step-functions": "^2.30.0"
   },

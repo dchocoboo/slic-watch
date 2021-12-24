@@ -6,6 +6,7 @@ variablesResolutionMode: 20210219
 plugins:
   - serverless-step-functions
   - serverless-slic-watch-plugin
+  - serverless-esbuild
 
 custom:
   slicWatch:
@@ -60,7 +61,7 @@ functions:
     handler: queue-test-handler.handleDrive
 
   driveTable:
-    handler: table-test-hander.handleDrive
+    handler: table-test-handler.handleDrive
 
   streamProcessor:
     handler: stream-handler.handle
